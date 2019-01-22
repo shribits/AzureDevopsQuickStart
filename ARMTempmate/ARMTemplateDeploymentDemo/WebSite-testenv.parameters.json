@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "sp-aus-testenv-productcat"
+    },
+    "skuName": {
+      "value": "S1"
+    },
+    "webSiteName": {
+      "value": "wa-aus-testenv-web-productcat"
+    },
+    "Website-staggingName": {
+      "value": "staging"
+    },
+    "apiAppName": {
+      "value": "wa-aus-testenv-api-productcat"
+    },
+    "dbName": {
+      "value": "db-aus-testenv-productcat"
+    }
+  }
+}

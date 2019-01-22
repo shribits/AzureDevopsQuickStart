@@ -1,0 +1,159 @@
+﻿@using Inspinia_MVC5.ViewModels
+
+
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+</head>
+@{
+    ViewBag.Title = "ProductEdit";
+}
+@model ProductEditViewModel
+<div class="form-group">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>Product edit</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+                </li>
+                <li>
+                    <a>E-commerce</a>
+                </li>
+                <li class="active">
+                    <strong>Product edit</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tab-1"> New Product</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-2"> New Product Category</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane active">
+                            <div class="panel-body">
+
+                                <div class="form-group">
+
+                                    <fieldset class="form-horizontal">
+                                        <form id="product" action="">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Name:</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control m-b" name="ProductCategoryName">
+                                                        @foreach (var item in Model.productCategory)
+                                                        {
+                                                            <option>@item.ProductCat</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Name:</label>
+                                                <div class="col-sm-10"><input name="ProductName" type="text" class="form-control" placeholder="Product name"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Quantity:</label>
+                                                <div class="col-sm-10"><input name="inStock" type="text" class="form-control" placeholder="160"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Image Source:</label>
+                                                <div class="col-sm-10"><input name="productImg" type="text" class="form-control" placeholder="image link"></div>
+                                            </div>
+                                        </form>
+                                    </fieldset>
+                                    <div class="col-sm-2 col-sm-offset-10">
+                                        <input class="btn btn-primary pull-right m-t-n-xs" type="button" name="button" onclick="createProduct()" value="Add new product">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-pane">
+                            <div class="panel-body">
+                                <fieldset class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Name:</label>
+                                        <div class="col-sm-10"><input type="text" name="NewProductCategoryName" class="form-control" placeholder="Product Category Name"></div>
+                                    </div>
+                                </fieldset>
+                                <div class="col-sm-2 col-sm-offset-10">
+                                    <input class="btn btn-primary pull-right m-t-n-xs" type="button" name="button" onclick="createProductCategory()" value="Add new product category">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Styles {
+    @Styles.Render("~/plugins/summernoteStyles")
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/summernote")
+
+
+    <script type="text/javascript">
+      
+        function createProduct() {
+            $.ajax({
+                type: "POST",
+                url: "CreateProduct",
+                data: $('#product').serialize(),
+            }).done(function (data) {
+                
+                alert("new product created");
+                //swal("new product created", "click of to continue", "success");
+                }).fail(function () {
+                    alert(data);
+                    alert("oops");
+                //swal("oops", "Couldn't connect to the server", "error");
+            });
+
+        }
+
+        function createProduct() {
+            $.ajax({
+                type: "POST",
+                url: "CreateProduct",
+                data: $('#product').serialize(),
+            }).done(function (data) {
+
+                alert("new product created");
+                //swal("new product created", "click of to continue", "success");
+            }).fail(function () {
+                alert(data);
+                alert("oops");
+                //swal("oops", "Couldn't connect to the server", "error");
+            });
+
+        }
+        $(document).ready(function () {
+
+           
+
+        });
+
+
+
+
+
+    </script>
+}
