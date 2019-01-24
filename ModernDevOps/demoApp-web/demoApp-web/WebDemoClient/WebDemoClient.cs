@@ -236,7 +236,7 @@ namespace WebDemo
         private void Initialize()
         {
             this.Products = new Products(this);
-            this.BaseUri = new Uri("https://wa-aus-dev-api-productcat.azurewebsites.net");
+            this.BaseUri = new Uri("add your API or API management base url");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
