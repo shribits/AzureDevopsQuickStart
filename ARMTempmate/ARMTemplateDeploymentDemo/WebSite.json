@@ -49,14 +49,30 @@
       "type": "string",
       "minLength": 1
     },
+    "storageName": {
+      "type": "string",
+      "minLength": 1
+    },
     "dbName": {
       "type": "string",
       "minLength": 1
+    },
+    "sadevausproductcatType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_ZRS",
+        "Standard_GRS",
+        "Standard_RAGRS",
+        "Premium_LRS"
+      ]
     }
 
 
   },
   "variables": {
+    "sadevausproductcatName": "[concat('sadevausproductcat', uniqueString(resourceGroup().id))]"
     
     
   },
@@ -512,6 +528,20 @@
         "name": "[parameters('dbName')]"
       },
       "dependsOn": []
+    },
+    {
+      "name": "[parameters('storageName')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2016-01-01",
+      "sku": {
+        "name": "[parameters('sadevausproductcatType')]"
+      },
+      "dependsOn": [],
+      "tags": {
+        "displayName": "sadevausproductcat"
+      },
+      "kind": "Storage"
     }
 
   ]

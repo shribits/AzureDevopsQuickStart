@@ -21,12 +21,13 @@ namespace WebDemo.Models
         /// <summary>
         /// Initializes a new instance of the ProductCategory class.
         /// </summary>
-        public ProductCategory(string productCat = default(string), int? productCatID = default(int?), IList<Product> products = default(IList<Product>), string productCatImg = default(string))
+        public ProductCategory(string productCat = default(string), int? productCatID = default(int?), List<Product> products = default(List<Product>), string productCatImg = default(string))
         {
             ProductCat = productCat;
             ProductCatID = productCatID;
-            Products = products;
             ProductCatImg = productCatImg;
+            Products = new List<Product>();
+            Products.AddRange(products);
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace WebDemo.Models
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "Products")]
-        public IList<Product> Products { get; set; }
+        public List<Product> Products { get; set; }
 
         /// <summary>
         /// </summary>

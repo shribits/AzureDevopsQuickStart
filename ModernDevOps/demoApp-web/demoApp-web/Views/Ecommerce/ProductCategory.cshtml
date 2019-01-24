@@ -30,9 +30,10 @@ img {
 </div>
 
 <div class="wrapper wrapper-content animated fadeInRight">
-    @foreach (var item in Model)
+    @foreach (WebDemo.Models.ProductCategory item in Model)
     {
         <div class="row">
+
             @foreach (var subItem in item.Products)
             {
                 <div class="col-md-3">

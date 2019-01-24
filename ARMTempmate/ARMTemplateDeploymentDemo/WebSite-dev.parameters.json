@@ -3,22 +3,25 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "hostingPlanName": {
-      "value": "sp-aus-dev-productcat"
+      "value": "sp-aus-dev-productcat1"
     },
     "skuName": {
       "value": "S1"
     },
     "webSiteName": {
-      "value": "wa-aus-dev-web-productcat"
+      "value": "wa-aus-dev-web-productcat1"
     },
     "Website-staggingName": {
       "value": "staging"
     },
     "apiAppName": {
-      "value": "wa-aus-dev-api-productcat"
+      "value": "wa-aus-dev-api-productcat1"
     },
     "dbName": {
-      "value": "db-aus-dev-productcat"
+      "value": "db-aus-dev-productcat1"
+    },
+    "storageName": {
+      "value": "sadevausproductcat1"
     }
   }
 }
