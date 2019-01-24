@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ARMTemplateDeploymentDemo", "ARMTemplateDeploymentDemo\ARMTemplateDeploymentDemo.deployproj", "{42AA8BC1-D47C-4C74-B45F-FF6280F93EB8}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AddAPIToAPIManagement", "AddAPIToAPIManagement\AddAPIToAPIManagement.deployproj", "{B9A8787D-43A9-4145-AD1A-F6ADE270D061}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42AA8BC1-D47C-4C74-B45F-FF6280F93EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AA8BC1-D47C-4C74-B45F-FF6280F93EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AA8BC1-D47C-4C74-B45F-FF6280F93EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AA8BC1-D47C-4C74-B45F-FF6280F93EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A8787D-43A9-4145-AD1A-F6ADE270D061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A8787D-43A9-4145-AD1A-F6ADE270D061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A8787D-43A9-4145-AD1A-F6ADE270D061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A8787D-43A9-4145-AD1A-F6ADE270D061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA12FC07-FED2-4C75-B09A-755E6AF8435B}
+	EndGlobalSection
+EndGlobal
